@@ -1,0 +1,17 @@
+Initializing Fields
+
+Fields can be initialized in their delcarations or, if it requires logic, in
+the class constructor. Initializing instance variables in the constructor
+is preferred.
+
+It is not necessary to declare and initialize fields at the beginning of the
+class definition, only before they are used.
+
+To initialize class/static variable is it possible to call a method from the
+declaration, a private static method, or use a static code block.
+
+To initialize an instance variable it is possible to call a method from the
+declaration, a protected final method, or use a code block without the static
+keyword. Instance variables are created AFTER an instance is created. Until
+that time, only static class variables are available.
+

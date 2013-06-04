@@ -1,0 +1,67 @@
+Objects
+
+Class is a blueprint for objects, you create an object from a class.
+* Declaration. An object type is associated with a variable.
+* Instantiation. The "new" keyword is a Java operator that creates an object.
+* Initialization. The "new" operator is followed by a call to a constructor
+    which initializes the new object. Requires a single, postfix argument ()
+    to call the constructor.
+
+"Creating An Object" == "Instantiating A Class"
+
+The new object does not have to be assigned to a variable, it can be used
+directly in an expression.
+
+How We Use Objects
+
+Use or change the value of one of its fields. Within a class you may use a
+simple name to refer to a field. Outside of the class it is necessary to use an
+object reference (name) followed by a dot operator, followed by a simple field
+name: objectReference.fieldName;
+Can also use the the value returned from "new" to access a new objects fields:
+int height = new Rectangle().height;
+Since the object wasn't stored anywhere, it is unreferenced and recycled!
+
+Call one of its methods to perform an action. We append the methods simple name
+to the object reference using the dot operator. Inside the parenthesis are
+arguments to the method: objectReference.methodName(argumentList);
+As with fields, the value returned from "new" can be assigned to a variable,
+if the method returns a value.
+
+The Garbage Collector
+
+When all references to an object are gone, the object is garbage collection.
+Setting a reference to null is one way.
+
+Method Returning Values
+
+A method returns to the code that invoked it when:
+* it completes all the statements in the method,
+* reaches a "return" statement,
+* throws an exception
+Methods may contain "return" statements even if it does not have a return type!
+Data type of the return value must match the method's declared type.
+
+Returning a Class or Interface
+
+Methods can return a class or interface, really returning an object instantiated
+from the class. The method can return a subclass (an object of the subclass) of
+the declared return value. It is possible to override a method and define it to
+return a subclass of the original method.
+original method:    public Number returnANumber() {}
+method overridden:  public ImaginaryNumber returnANumber() {}
+This is called "covariant return type." The return type is allowed to vary in
+the same direction as the subclass.
+
+Using interface names as return types is possible but the object returned must
+implement the specified interface.
+
+** So, a method can return an object, one of its subclasses, or an implemented
+interface of the object or subclass object. **
+
+Using the "this" Keyword
+
+Shadowing is the most common reason to use this. From the constructor, "this"
+can be used to call another constructor in the same class. This is called
+"explicit constructor invocation." If present, the invocation must be the first
+line in the constructor!

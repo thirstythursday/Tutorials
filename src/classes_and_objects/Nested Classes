@@ -1,0 +1,76 @@
+Nested Classes
+
+Java allows defning classes within another class.
+* static nested classes: nested class declared "static"
+* inner classes: non-static nested classes
+Inner classes are members of the enclosing class and have access to other members
+of the enclosing class, even if they are declared private (class only scope).
+As a member of the outer class, inner classes can be declared private, public,
+protected, or package-private (default).
+
+Why?
+
+* It is a way of logically grouping classes that are only used in one place.
+* It increases encapsulation.
+* Nested classes can lead to more readable and maintainable code.
+If a class is useful to one other class, embed it in that class and keep the
+two together. These are "helper classes." If one class needs access to the
+members of another, embedding the second class in the first keeps you from
+having to make the first class public. Nesting small classes within top-level
+classes places the code closer to where it is used.
+
+Static Nested Classes
+
+A static nested class is behaviorially the same as any top-level class. It 
+interacts with the instance members of its outer class through object references.
+It has no direct access to the instance variables and methods defined in its
+enclosing class, an object from that class has to be created first.
+Static nested classes are accessed using the enclosing class name:
+OuterClass.StaticNestedClass nestedObject = new OuterClass.StaticNestedCLass();
+* In effect, a static nested class is behaviorally a top-level class that has been
+nested in another top-level class for packaging convenience
+
+Inner Classes
+
+An inner class is associated with an instance of its enclosing class. An inner
+class cannot define any static members itself. An instance of InnerClass exists
+within an instance of OuterClass. To instantiate an inner class, you must first
+instantiate the outer class, then create the inner object within the outer
+object with this syntax:
+OuterClass.InnerClass innerObject = outerObject.new InnerClass();
+Seems like instantiating the inner class syntax resembles callinvg a method.
+Used heavily in the event-handling mechanism.
+Two other kinds of inner classes:
+* local classes: declaring an inner class within a block, but usually in
+    the body of a method
+* anonymous classes: declare an inner class as a local class but without even
+    naming it!
+
+Shadowing
+
+If a declaration of a type in a particular scope has the same name as another
+declaration in the enclosing scope, the declaration "shadows" the declaration
+of the enclosing scope. You must refer to the shadowed declaration by name alone
+but use a fully qualfied name. See NestedShadowTest.java
+
+Local Classes are Inner Classes
+
+Can be defined inside any block, which is balanced braces, such as a method body
+"for" loop or an "if" clause. A local class has access to members of its
+enclosing class. They are like inner classes also in that they cannot define or
+declare any static members. That means no interfaces because interfaces are
+inherently static. Local classes defined inside a static method can only refer
+to static members of the enclosing class.
+
+Anonymous Classes
+
+Anonymous classes enable you to make your code more concise. They enable you to
+declare and instantiate a class at the same time. They are local classes
+except they do not have a name! Use them if you need to use a local class only
+once.
+Anonymous classes are expressions, defined in another expression. The syntax is
+like the invocation of a constructor, except the class definition is defined
+in a block of code.
+Lambda expressions make sense if you only have one method in the anonymous class.
+If you have to implement an interface that contains two or more methods.
+See Lambda Expressions.
