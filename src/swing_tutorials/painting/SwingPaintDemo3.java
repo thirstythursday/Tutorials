@@ -1,6 +1,8 @@
 package swing_tutorials.painting;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.BorderFactory;
@@ -58,8 +60,27 @@ public class SwingPaintDemo3 {
 
         private void moveSquare(int x, int y) {
             int OFFSET = 1;
-            
+            if ((squareX != x) || (squareY != y)) {
+                repaint(squareX, squareY, squareW + OFFSET, squareH + OFFSET);
+                squareX = x;
+                squareY = y;
+                repaint(squareX, squareY, squareW + OFFSET, squareH + OFFSET);
+            }
+        }
+
+        @Override
+        public Dimension getPreferredSize() {
+            return new Dimension(250, 250);
+        }
+        
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            g.drawString("This is my custom panel", 10, 20);
+            g.setColor(Color.RED);
+            g.fillRect(squareX, squareY, squareW, squareH);
+            g.setColor(Color.BLACK);
+            g.drawRect(squareX, squareY, squareW, squareH);
         }
     }
-
 }
+
