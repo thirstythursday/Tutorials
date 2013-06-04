@@ -1,0 +1,35 @@
+Access Control and Visibility
+
+Access control is specified by adding an "access modifer."
+Two levels of access control, classes or members (fields, methods, inner classes):
+* At the top level: public, or package-private (default)
+    * A class declared public is visible to all classes everywhere
+    * Without any declaration a class is visible to classes in the same package
+
+* At the member level: public, private, protected, or package-private (default)
+    * public means the same as it does for classes
+    * private means the member is visible within the same class
+    * protected means the member can be accessed within the same package
+        (as package-private) and a subclass of its class in another package
+
+Access Level Table:
+
+Modifier       Class   Package Subclass    World
+
+public         Y       Y       Y           Y
+protected      Y       Y       Y           N
+no modifier    Y       Y       N           N        DEFAULT
+private        Y       N       N           N
+
+Classes always have access to its own members
+
+Access levels affect in two ways. Classes from another source such as the
+ones in the Java platform have modifiers that affect which members of those
+you can use. When you write a class, every member variable and method needs
+to have its access level determined.
+
+Use the most restrictive access level that makes sense. Use private unless
+there is a good reason not to. Avoid public fields except for constants. Sun
+examples break this convention but not a good idea for production code.
+Public fields link you to a particular implementation and limit flexibility in
+changing code.

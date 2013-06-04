@@ -1,0 +1,8 @@
+Varargs construct
+
+Can pass a variable number of arguments into a method parameter.
+Syntax for varargs in a method parameter list:
+Type of the last parameter followed by an ellipsis, then a space, then parameter
+name.
+
+Most commonly seen with the printing methods.

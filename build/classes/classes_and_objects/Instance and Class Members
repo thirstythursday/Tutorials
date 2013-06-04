@@ -1,0 +1,47 @@
+Use of the Static Keyword
+
+The "static" keyword is used to create fields and methods that belong to the
+class, rather than in instance of the class.
+
+Static (class) Variables
+
+static fields and static methods are associated with the class, rather than
+with any object. Any object can change the value of a class variable, but class
+variables can also be manipulated without creating an instance of the class!
+
+Class variables are referenced by the class name itself, as in:
+Bicycle.numberOfBicycles, if numberOfBicycles is a static class variable.
+This makes it clear that it is a class variable.
+Can also refer to static fields with an object reference, as in:
+bikeInstance.numberOfBicycles
+but this is discouraged because it does not make it clear that they are class
+variables, but possibly instance variables.
+
+Static Methods
+
+Static methods can be invoked with the class name, without need for creating an
+instance of the class:
+ClassName.methodName(args)
+Can also refer to static method with an object reference, as in:
+instanceName.methodName(args)
+but this is discouraged for the same reason given for class variables, it does
+not make it clear that it is a class method
+
+Not all combinations of instance and class variables are allowed
+
+Instance methods can access instance variables and methods.
+Instance methods can access class (static) variables and methods.
+Class (static) methods can access class (static) variables and methods directly.
+Class (static) methods cannot access instance variables or methods directly,
+    they must use an object reference. Also, class methods cannot use "this"
+    keyword as there is no instance for "this" to refer to.
+
+Constants and use of the Final Keyword
+
+Use of the "static" modifier in combination with the "final" modifier is used
+to define constants. The final modifier indicates that the value of this
+field cannot change.
+static final double PI = 3.14159265
+Use uppercase, and can include underscore (_). These are "compile-time constants"
+and if it is changed in the source all classes that use it will need to be
+recompiled.

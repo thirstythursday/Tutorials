@@ -1,0 +1,64 @@
+Declaring Classes
+
+(see also Nested Classes)
+
+The class body contains fields, methods, and constructors for the class.
+Classes also can contain other "nested" classes. Inner classes are members.
+A class does not have to be instantiated. In other words, no object has to be
+created from a class and the classes' static method and fields can be accessed
+by using a fully qualified name: class.variableName or class.methodName().
+
+Syntax:
+MyClass extends MySuperClass implements MyInterface1, MyInterface2 { class
+body: field, constructor, and method declarations } all between braces.
+Modifiers like public and private determine what other classes can access
+MyClass. See Access Control file.
+
+Fields
+
+Composed of modifiers (can have 0), type, and name,
+The public access modifier indicates that all classes have access to fields
+and the private access modifier indicates that field is accessible only within its
+own class. It is common to make fields private for encapsulation. Public methods
+can give access to private fields (via setters and getters). All variables have a
+type and variable naming has a lot of convention.
+
+Methods
+
+Composed of six components, in order:
+* Modifiers. public, private, and others.
+* The return type. The data type of the value returned by the method, or "void"
+    if the method does not return a value.
+* The method name. Similar to the rules for field names, but different
+    conventions apply. Sometime the method has the same name as another because
+    of "method overloading."
+* The parameter list, in parenthesis. A comma delimited list of input parameters
+    preceded by their data types. If there are no parameters, the empty
+    parenthesis are still required. Arguments passed in must match the
+    parameters!
+* An exception list. LATER
+* The method body, in braces. The method's code, including local variables.
+The method's name and parameter types comprise the "method signature."
+
+Overloading Methods
+
+Methods with different signatures can have the same name. The parameter list
+differs in number and/or type of arguments, causing a differentiation that Java
+uses to distinguish between the methods. The name can be the same if the
+parameters differ, creating different signatures. Return type is not taken in
+to account.
+Two important points:
+* Two methods cannot have the same name AND number and type of arguments.
+* Use of overloaded methods makes the code less readable.
+
+Constructors
+
+All objects have at least one constructor. A constructor looks like a method
+with the same name as the class and without a return type, that is called
+when the class is instantiated.
+
+Java will automatically provide a no-argument default constructor for any class
+without a constructor! This default constructor will call the no-argument
+constructor of the superclass. The compiler will error if the superclass does
+not have a no-argument constructor. If the class has no explicit superclass, it
+has an implicit superclass of "Object" that DOES have a no-argument constructor!

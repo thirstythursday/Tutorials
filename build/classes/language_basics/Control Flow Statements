@@ -1,0 +1,74 @@
+The if-then Statement
+
+Execute the code section if a conditional test evaluates to TRUE. The most basic
+kind of control flow statements.
+
+The if-then-else
+
+Provides a secondary path of execution when an "if" clause evaluates to FALSE.
+In a compound series of "else if" once one condtion evaluates to TRUE all
+subsequent conditions are not evaluated, including an "else" at the end.
+
+The switch Statement
+
+* Can have any number of possible execution paths.
+* Works with byte, char, int, primitive data types, enumerated types, and the String class.
+The body is known as the "switch block." A statement in a switch block can be
+labeled with one or more "case" or "default" labels. if-then-else works just as
+well and choosing to use that or switch is up to the programmer. Switch cannot
+operate on ranges like an if statement can.
+A "break" statement is necessary with switch because statements "fall through."
+That is, after a matching "case" label all subsequent statements are evaluated
+regardless of case labels until a break statement is encountered.
+The "default" section handles all values that are not explicitly handled by one
+of the "case" sections.
+
+The while Statement
+
+Continually executes a block of statements while a particular condition is
+TRUE. The while expression is evaluated before each iteration.
+
+The do-while Statement
+
+Also executes a block of statements while a condition evaluates to TRUE.
+The difference between while and do-while is that do-while evaluates its
+expression at the bottom of the loop instead of the top. Statements within the
+"do" block are always executed as least once.
+
+The for Statement
+
+A compact way to iterate over a range of values. Often referred to as the
+"for loop." Made of three parts in generalized form.
+* Initialization: Initializes the loop, executed once as the loop begins.
+* Termination: Terminates loop when evaluates to FALSE.
+* Increment: Invoked after each iteration of the loop. Can also decrement.
+
+The enhanced-for Statement
+
+The for statement has a second form for iterating through collections and
+arrays. This is recommended over the general form when possible.
+Syntax as follows     for (int loopVariable : arrayName)
+
+The break Statement
+
+The break statement can terminate a switch, for, while, or do-while loop.
+* Unlabeled. Terminates innermost switch, for, while, or do-while statement.
+* Labeled. See language_basics.BreakWithLabelDemo for a good example.
+
+The continue Statement
+
+It skips the current iteration of a for, while, or do-while loop.
+* Unlabeled. Skips to the end of the innermost loop's body and evaluates the
+    boolean expression that controls the loop.
+* Labeled. Skips the current iteration of an outer loop marked with the given
+    label. See language_basics.ContinueWithLabelDemo for a good example.
+
+The return Statement
+
+The last of the branching statements. The return statement exits from the current
+method, and control flow returns to where the method was invoked. Two forms:
+* Returns a value. Simply put the value, or expressoin that calculates a value
+    after the return statement.
+* Does not return a value. Use if the method is declared "void."
+Methods nay have a return statement even if they do not have a return type. In
+this case the method just returns control.

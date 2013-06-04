@@ -1,0 +1,20 @@
+Expressions
+
+Construct made up of variables, operators, and method invocations. This is
+constructed according to the syntax of the language, that evaluates to a single
+value. Core component of statements. Order of operations governs which
+order operators are evaluated.
+
+Statements
+
+* Roughly equivalent to sentences in natural languages.
+* Forms a complete unit of execution.
+* Expression Statements: Expressions can be made into statements by terminating
+    the expression with a semicolon (;).
+* Declaration Statements: Declares a variable.
+* Control Flow Statements: Regulate the order in which statements get executed.
+
+Blocks
+
+A group of zero or more statements between balanced braces and can be used
+anywhere a single statement is allowed.
