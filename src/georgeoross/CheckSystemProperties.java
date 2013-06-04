@@ -33,7 +33,7 @@ public class CheckSystemProperties {
         System.out.format("user.home is: %s%n", System.getProperty("user.home"));
         System.out.format("user.dir is %s%n%n", System.getProperty("user.dir"));
         
-        System.out.format("Now come the environment variables: %n");
+        System.out.format("Now come the environment variables!: %n");
         Map<String, String> environment = new HashMap<String, String>(System.getenv());
         Iterator it = environment.keySet().iterator();
         while(it.hasNext()){
