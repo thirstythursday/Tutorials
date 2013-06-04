@@ -1,0 +1,41 @@
+Using Top Level Containers
+
+JFrame, JDialog, JApplet classes are the top level. They share content panes,
+menu bars, and root panes.
+
+As a rule, a standalone application with a Swing-based GUI has at least one
+conatainment hierarchy with a JFrame as its root. Example, an application with
+one main window and two dialogs has three containment hierarchies, and therefore
+three top-level containers. One containment hierarchy has a JFrame as its root,
+and the other two have JDialog boxes as their roots.
+
+A Swing-based applet has at least one containment hierarchy, exactly one of
+which is rooted by a JApplet object, the components in the browser window.
+
+* To appear onscreen, every GUI component must be part of a containment
+hierarchy, which is a tree of components that has a top-level container as its
+root.
+* Each GUI component can be contained only once. If a component is in a container
+and is added to another, it is removed from the first.
+* Each top-level container has a content pane that contains the visible
+components in that top-level container's GUI.
+* You can optionally add a menu bar to a top-level container. The menu bar is
+positioned (by convention) within the top-level container, but outside the
+content pane. Some look and feels (like Mac OS) let you put it at the top of the
+screen.
+
+The Root Pane
+
+Each top-level container relies on a reclusive intermediate container called the
+root pane. It manages the content pane and menu bar. The root pane provides
+components to every top level frame
+
+Layers:
+
+Glass Pane
+Content Pane (and Menu Bar)
+Layered Pane
+Root Pane
+Top-Level Container (JFrame, JDialog, JApplet)
+
+JInternalFrame mimics JFrame, but internal frames are not top-level containers.

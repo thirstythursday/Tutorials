@@ -1,0 +1,33 @@
+JFC is short for Java Foundation Classes which encompass features for
+building GUIs and adding graphics and functionality and interactivity to Java
+application. They contain features:
+* Swing GUI Components
+* Pluggable Look-and-Feel Support
+* Accessibility API
+* Java 2D API
+* Internationlization
+
+Which Packages?
+
+There are 18 public packages:
+javax.accessibility, javax.swing, javax.swing.border, javax.swing.colorchooser,
+javax.swing.event, javax.swing.filechooser, javax.swing.plaf,
+javax.plaf.basic, javax.swing.plaf.metal, javax.swing.plaf.multi,
+javax.swing.plaf.synth, javax.swing.text, javax.swing.text.html,
+javax.swing.text.html, javax.swing.text.html.parser, javax.swing.text.rtf,
+javax.swing.tree, javax.swing.undo
+
+Mostly use javax.swing, and javax.swing.event
+
+IDE Swing Code Generation
+
+In the NetBeans IDE, IDE generated code is in uneditable "guarded blocks."
+The IDE creates a private method named "initComponents," which initializes the
+various components of the GUI. It also tells the application to "exit on close,"
+performs some layout-specific tasks, then packs the components together on the
+screen.
+
+Can edit within Property Editor without entering the source code directly.
+
+The Inspector provides a graphical representation of your application's
+components.

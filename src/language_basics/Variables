@@ -1,0 +1,46 @@
+The Java programming language defines the following kinds of variables:
+
+Instance Variables (Non-Static Fields)
+
+Objects store their individual states in "non-static fields", that is, fields
+declared without the static keyword. Non-static fields are also known as
+instance variables because their values are unique to each instance of a
+class (to each object, in other words). Not always necessary to assign a default
+value to a field.
+
+Class Variables (Static Fields)
+
+A class variable is any field declared with the static modifier;
+this tells the compiler that there is exactly one copy of this variable
+in existence, regardless of how many times the class has been
+instantiated. Not always necessary to assign a default
+value to a field.
+
+Local Variables
+
+Similar to how an object stores its state in fields, a method
+will often store its temporary state in local variables. The syntax for
+declaring a local variable is similar to declaring a field (for example,
+int count = 0;). There is no special keyword designating a variable as
+local; that determination comes entirely from the location in which the
+variable is declared — which is between the opening and closing braces
+of a method. As such, local variables are only visible to the methods in
+which they are declared; they are not accessible from the rest of the
+class. They always need to have a default value assigned!
+
+Parameters
+
+Provide extra information to a method. The important thing to remember is that
+parameters are always classified as "variables" not "fields". If a parameter
+has the same name as a field, it is said to be "shadowing" the field. This
+creates difficult code. If the field variable is referenced within that method
+it needs to be a fully qualified name using the "this" keyword. Shadowing is
+conventionally used only within constructors and methods that set a particular
+field.
+* Pass-by-value. Passing primitive arguments (int, double, etc) are this kind.
+    The parameters exist only within the scope of the method. When the method
+    returns, any changes to them are lost.
+* Pass-by-value. Reference data data types like objects are also this kind. Huh?
+    Mehran called it pass-by-reference.
+    Nevertheless, values of the objects field can be changed in the method,
+    if they have the proper access level.
