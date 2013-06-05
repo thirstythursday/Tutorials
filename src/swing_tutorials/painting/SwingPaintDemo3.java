@@ -73,6 +73,7 @@ public class SwingPaintDemo3 {
             return new Dimension(250, 250);
         }
         
+        @Override
         protected void paintComponent(Graphics g) {
             super.paintComponent(g);
             g.drawString("This is my custom panel", 10, 20);
