@@ -14,12 +14,10 @@ public class SwingPaintDemo3 {
     
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
-
             @Override
             public void run() {
                 createAndShowGUI();
             }
-            
         });
     }
     
@@ -33,6 +31,7 @@ public class SwingPaintDemo3 {
         f.setVisible(true);
     }
 
+    
     private static class MyPanel extends JPanel {
         
         private int squareX = 50;
@@ -42,14 +41,14 @@ public class SwingPaintDemo3 {
 
         public MyPanel() {
             setBorder(BorderFactory.createLineBorder(Color.black));
-            
+            // put mouse listener in the constructor
             addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {
                     moveSquare(e.getX(), e.getY());
                 }
             });
-            
+            // put mouse motion listener int the constructor
             addMouseMotionListener(new MouseAdapter() {
                 @Override
                 public void mouseDragged(MouseEvent e) {
