@@ -1,3 +1,7 @@
+/*
+ * Final version of the paint demo. Fancy Shmancy.
+ */
+
 package swing_tutorials.painting;
 
 import java.awt.Color;
@@ -13,6 +17,7 @@ import javax.swing.SwingUtilities;
 public class SwingPaintDemo3 {
     
     public static void main(String[] args) {
+        // handy idiom, but can be done another way
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -20,6 +25,7 @@ public class SwingPaintDemo3 {
             }
         });
     }
+ 
     
     private static void createAndShowGUI() {
         System.out.println("Created GUI on the EDT? " + SwingUtilities.isEventDispatchThread());
@@ -41,14 +47,15 @@ public class SwingPaintDemo3 {
 
         public MyPanel() {
             setBorder(BorderFactory.createLineBorder(Color.black));
-            // put mouse listener in the constructor
+            
+            // put mouse listeners in the constructor of the panel, not the JFrame?
             addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {
                     moveSquare(e.getX(), e.getY());
                 }
             });
-            // put mouse motion listener int the constructor
+            
             addMouseMotionListener(new MouseAdapter() {
                 @Override
                 public void mouseDragged(MouseEvent e) {
@@ -57,12 +64,17 @@ public class SwingPaintDemo3 {
             });
         }
 
+        /**
+         * This method is extra work, but is efficient and gives good results
+         */
         private void moveSquare(int x, int y) {
             int OFFSET = 1;
             if ((squareX != x) || (squareY != y)) {
+                // first invocation of repaint paints where the square WAS
                 repaint(squareX, squareY, squareW + OFFSET, squareH + OFFSET);
                 squareX = x;
                 squareY = y;
+                // second invocation of repaint now paints where the square IS
                 repaint(squareX, squareY, squareW + OFFSET, squareH + OFFSET);
             }
         }
@@ -80,6 +92,9 @@ public class SwingPaintDemo3 {
             g.fillRect(squareX, squareY, squareW, squareH);
             g.setColor(Color.BLACK);
             g.drawRect(squareX, squareY, squareW, squareH);
+            
+            // instead of the moveSquare() efficiency mess just uncomment the next line:
+            // repaint();
         }
     }
 }

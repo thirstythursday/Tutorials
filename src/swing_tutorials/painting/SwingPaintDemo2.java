@@ -1,3 +1,7 @@
+/*
+ * The second version, here we paint the panel then place a sring.
+ */
+
 package swing_tutorials.painting;
 
 import java.awt.Color;
@@ -12,7 +16,6 @@ public class SwingPaintDemo2 {
     
     public static void main(String[] args) {
         Runnable r = new Runnable() {
-            
             @Override
             public void run() {
                 createAndShowGUI();
