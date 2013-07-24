@@ -6,6 +6,7 @@ package georgeoross;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
@@ -16,7 +17,7 @@ import javax.swing.SwingUtilities;
  *
  * @author george
  */
-public class Masterpiece extends JPanel {
+public class Masterpiece extends JFrame {
     
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -78,7 +79,8 @@ public class Masterpiece extends JPanel {
             // draw tiny rectangle on repaint
             g.drawRect(mousePosX, mousePosY, 1, 1);
             
-            // try to draw short lines instead of little 1px rectangles
+            Graphics2D g2 = (Graphics2D) g;
+            g2.drawRect(mousePosX + 10, mousePosY + 10, 2, 2);
             
         }
         

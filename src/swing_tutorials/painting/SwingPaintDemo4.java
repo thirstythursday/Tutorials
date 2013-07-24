@@ -72,12 +72,12 @@ public class SwingPaintDemo4 {
             
             if ((CURR_X != x) || (CURR_Y != y)) {
                 // repaint the old location
-                repaint(CURR_X,CURR_Y,CURR_W+OFFSET,CURR_H+OFFSET);
+                repaint(CURR_X, CURR_Y, CURR_W + OFFSET, CURR_H + OFFSET);
                 // update coordinates
                 redSquare.setX(x);
                 redSquare.setY(y);
                 // repaint at new location
-                repaint(redSquare.getX(), redSquare.getY(), redSquare.getWidth()+OFFSET, redSquare.getHeight()+OFFSET);
+                repaint(redSquare.getX(), redSquare.getY(), redSquare.getWidth() + OFFSET, redSquare.getHeight() + OFFSET);
             }
         }
         
@@ -88,7 +88,11 @@ public class SwingPaintDemo4 {
         
         @Override
         public void paintComponent(Graphics g) {
+            // Calling super lets the UI Delegate paint first, which
+            // includes the background in this opaque component.
+            // Comment it out and see what happens!
             super.paintComponent(g);
+            // Then we get busy.
             g.drawString("This is my custom panel!", 10, 20);
             // paint at current position
             redSquare.paintSquare(g);

@@ -1,15 +1,18 @@
 package georgeoross;
 
 /**
- *
+ * A threading example
  * @author george
  */
-public class GUICaller {
+public class GUICallerThreaded {
     
     public static void main(String[] args) {
+        
         GUI g = new GUI();
-        Thread t = new Thread(g);
-        t.start();
+        
+        Thread threadA = new Thread(g);
+        
+        threadA.start();
     }
     
 }

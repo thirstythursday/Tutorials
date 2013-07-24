@@ -29,7 +29,6 @@ public class GUI implements Runnable {
 
         GraphicsCar car = new GraphicsCar(100, 100);
         f.add(car);
-        GraphicsCar carTurned = new GraphicsCar(150, 150);
-        carTurned.changeFacing(90);
+        car.repaint();
     }
 }

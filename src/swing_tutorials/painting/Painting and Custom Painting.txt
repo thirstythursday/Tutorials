@@ -1,4 +1,4 @@
-Painting
+Painting in Swing
 
 The paintComponent method is where all of your custom painting takes place.
 This method is defined by javax.swing.JComponent and then overridden by your
@@ -10,3 +10,11 @@ In most cases the object that is actually received by this method will be an
 instance of java.awt.Graphics2D (a Graphics subclass), which provides support
 for sophisticated 2D graphics rendering.
 
+Painting starts with AWT's painting model and extends it further in order to
+maximize performance and improve extensibility.
+The paint() callback is supported through repaint() to tigger updates. Swing
+has additional structure like borders and the UI delegate. Swing supports the
+RepaintManager API for more customization. Double buffering is supported.
+
+In AWT we override paint() but in Swing we override paintComponent()! We don't
+want to override paintBorder() or paintChildren() unnecessarily.

@@ -103,6 +103,7 @@ class WeatherPainter extends Component {
         repaint();
     }
     
+    @Override
     public Dimension getPreferredSize(){
         return new Dimension(450, 125);
     }
@@ -171,6 +172,7 @@ class WeatherPainter extends Component {
         }
     }
     
+    @Override
     public void paint(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
         Dimension size = getSize();

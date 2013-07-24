@@ -38,6 +38,7 @@ public class MouseEventDemo extends JPanel implements MouseListener {
         UIManager.put("swing.boldMetal", Boolean.FALSE);
         
         javax.swing.SwingUtilities.invokeLater(new Runnable () {
+            @Override
             public void run() {
                 createAndShowGUI();
             }

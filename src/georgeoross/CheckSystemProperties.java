@@ -32,7 +32,13 @@ public class CheckSystemProperties {
         System.out.format("user.name is: %s%n", System.getProperty("user.name"));
         System.out.format("user.home is: %s%n", System.getProperty("user.home"));
         System.out.format("user.dir is %s%n%n", System.getProperty("user.dir"));
-        
+
+        System.out.format("The Library Directory is: %s%n", System.getProperty("LibraryDirectory"));
+        System.out.format("The Documents Directory is: %s%n", System.getProperty("DocumentsDirectory"));
+        System.out.format("The Caches Directory is: %s%n", System.getProperty("CachesDirectory"));
+        System.out.format("The Application Support Directory is: %s%n", System.getProperty("ApplicationSupportDirectory"));
+        System.out.format("The Sandbox Enabled is: %s%n%n", System.getProperty("SandboxEnabled"));
+
         System.out.format("Now come the environment variables!: %n");
         Map<String, String> environment = new HashMap<String, String>(System.getenv());
         Iterator it = environment.keySet().iterator();

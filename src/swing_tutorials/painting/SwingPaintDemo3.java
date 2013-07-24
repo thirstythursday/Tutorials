@@ -48,7 +48,7 @@ public class SwingPaintDemo3 {
         public MyPanel() {
             setBorder(BorderFactory.createLineBorder(Color.black));
             
-            // put mouse listeners in the constructor of the panel, not the JFrame?
+            // put mouse listener objects in the panel, not the JFrame
             addMouseListener(new MouseAdapter() {
                 @Override
                 public void mousePressed(MouseEvent e) {

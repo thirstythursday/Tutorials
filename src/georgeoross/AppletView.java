@@ -4,14 +4,16 @@
  */
 package georgeoross;
 
+import javax.swing.JApplet;
+
 /**
  *
  * @author george
  */
-public class AppletView extends javax.swing.JApplet {
+public class AppletView extends JApplet {
 
     /**
-     * Initializes the applet AppletView
+     * Initializes the Applet AppletView
      */
     @Override
     public void init() {
